@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-const TextStyle LoginPageHeading = TextStyle(
+const TextStyle PageHeading = TextStyle(
     decoration: TextDecoration.none,
     fontSize: 30,
     fontWeight: FontWeight.bold,
