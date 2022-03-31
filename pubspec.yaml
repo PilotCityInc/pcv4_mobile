@@ -29,6 +29,9 @@ dependencies:
   get_it: ^7.2.0
   injectable: ^1.5.3
   auto_route: ^3.2.4
+  http: ^0.13.4
+  jwt_decoder: ^2.0.1
+  flutter_secure_storage: ^5.0.2
 
   cupertino_icons: ^1.0.4
 

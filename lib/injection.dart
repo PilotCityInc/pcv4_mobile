@@ -6,8 +6,8 @@ import 'package:pcv4_mobile/injection.config.dart';
 final getIt = GetIt.instance;
 
 class Env {
-  static const prod = "prod";
-  static const dev = "dev";
+  static const prod = 'prod';
+  static const dev = 'dev';
 }
 
 @InjectableInit()

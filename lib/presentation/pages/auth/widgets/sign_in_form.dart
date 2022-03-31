@@ -10,14 +10,24 @@ class SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInFormBloc, SignInFormState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        state.authFailureOrSuccessOption.forEach((authFailureOrSuccess) {
+          authFailureOrSuccess.fold(
+            // TODO: show actual error message on auth failure
+            (authFailure) => debugPrint('auth failed: $authFailure}'),
+            (success) {},
+          );
+        });
+      },
       builder: (context, state) {
         return Form(
-          // TODO: connect sign in form UI with sign in form state
+          autovalidateMode: state.showErrorMessages
+              ? AutovalidateMode.always
+              : AutovalidateMode.disabled,
           child: ListView(
             children: [
               Image.asset(
-                'assets/images/PilotCity.png',
+                'assets/images/pilot_city.png',
               ),
               const SizedBox(height: 8),
               AutofillGroup(
@@ -30,6 +40,21 @@ class SignInForm extends StatelessWidget {
                       ),
                       autofillHints: const [AutofillHints.email],
                       autocorrect: false,
+                      onChanged: (value) => context.read<SignInFormBloc>().add(
+                            SignInFormEvent.emailChanged(value),
+                          ),
+                      validator: (_) => context
+                          .read<SignInFormBloc>()
+                          .state
+                          .emailAddress
+                          .value
+                          .fold(
+                            (failure) => failure.maybeMap(
+                              invalidEmail: (_) => 'Invalid Email',
+                              orElse: () => null,
+                            ),
+                            (_) => null,
+                          ),
                     ),
                     const SizedBox(height: 8),
                     TextFormField(
@@ -39,6 +64,21 @@ class SignInForm extends StatelessWidget {
                       ),
                       autofillHints: const [AutofillHints.password],
                       obscureText: true,
+                      onChanged: (value) => context.read<SignInFormBloc>().add(
+                            SignInFormEvent.passwordChanged(value),
+                          ),
+                      validator: (_) => context
+                          .read<SignInFormBloc>()
+                          .state
+                          .password
+                          .value
+                          .fold(
+                            (failure) => failure.maybeMap(
+                              shortPassword: (_) => 'Short Password',
+                              orElse: () => null,
+                            ),
+                            (_) => null,
+                          ),
                     ),
                     const SizedBox(height: 8),
                   ],
@@ -59,9 +99,14 @@ class SignInForm extends StatelessWidget {
                   ),
                 ],
               ),
-              Expanded(
+              if (state.isSubmitting) ...[
+                const SizedBox(height: 8),
+                const LinearProgressIndicator(),
+                const SizedBox(height: 24),
+              ],
+              Center(
                 child: MaterialButton(
-                  child: const Text("Register instead"),
+                  child: const Text('Register instead'),
                   onPressed: () =>
                       context.router.replace(const RegisterPageRoute()),
                 ),

@@ -24,3 +24,19 @@ class Password extends ValueObject<String> {
 
   const Password._(this.value);
 }
+
+class PasswordConfirm extends ValueObject<String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory PasswordConfirm(String input, Password compareTo) {
+    return compareTo.value.fold(
+      (failure) => PasswordConfirm._(
+          left(ValueFailure.passwordConfirmNotMatching(failedValue: input))),
+      (passwordStr) =>
+          PasswordConfirm._(validatePasswordConfirm(input, passwordStr)),
+    );
+  }
+
+  const PasswordConfirm._(this.value);
+}

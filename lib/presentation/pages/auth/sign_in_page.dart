@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pcv4_mobile/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:pcv4_mobile/injection.dart';
 
-import 'sign_in_form.dart';
+import 'widgets/sign_in_form.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);

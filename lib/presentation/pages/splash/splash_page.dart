@@ -15,9 +15,8 @@ class SplashPage extends StatelessWidget {
         state.when(
           initial: () {},
           authenticated: () {
-            if (kDebugMode) {
-              print('I am authenticated!!');
-            }
+            // TODO: navigate to an actual page when authenticated
+            debugPrint('I am authenticated!!');
           },
           unauthenticated: () =>
               context.router.replace(const SignInPageRoute()),
@@ -28,7 +27,7 @@ class SplashPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/images/PilotCity.png'),
+            Image.asset('assets/images/pilot_city.png'),
             const SizedBox(height: 16),
             const CircularProgressIndicator(),
           ],
