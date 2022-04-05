@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pcv4_mobile/application/auth/auth_bloc.dart';
 import 'package:pcv4_mobile/injection.dart';
 import 'package:pcv4_mobile/presentation/routes/app_router.dart';
@@ -14,6 +15,7 @@ class AppWidget extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
+              // check auth on initial app launch
               getIt<AuthBloc>()..add(const AuthEvent.authCheckRequested()),
         ),
       ],
@@ -22,18 +24,16 @@ class AppWidget extends StatelessWidget {
         routeInformationParser: _appRouter.defaultRouteParser(),
         title: 'PilotCity Mobile',
         theme: ThemeData.light().copyWith(
-          primaryColor: Colors.green[800],
-          secondaryHeaderColor: Colors.blueAccent,
-          inputDecorationTheme: InputDecorationTheme(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-          ),
+          textTheme:
+              GoogleFonts.josefinSansTextTheme(ThemeData.light().textTheme),
+          primaryColor: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         darkTheme: ThemeData.dark().copyWith(
-          primaryColor: Colors.green[800],
-          secondaryHeaderColor: Colors.blueAccent,
-          inputDecorationTheme: InputDecorationTheme(
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-          ),
+          textTheme:
+              GoogleFonts.josefinSansTextTheme(ThemeData.dark().textTheme),
+          primaryColor: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
       ),
     );

@@ -10,8 +10,8 @@ import 'package:http/http.dart' as _i3;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/auth_bloc.dart' as _i10;
-import 'application/auth/register_form/register_form_bloc.dart' as _i8;
-import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i9;
+import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i8;
+import 'application/auth/sign_up_form/sign_up_form_bloc.dart' as _i9;
 import 'domain/auth/i_auth_facade.dart' as _i6;
 import 'infrastructure/auth/auth0_auth_facade.dart' as _i7;
 import 'infrastructure/auth/auth0_auth_service.dart' as _i5;
@@ -37,10 +37,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i6.IAuthFacade>(
       () => _i7.Auth0AuthFacade(get<_i5.Auth0AuthService>()),
       registerFor: {_dev});
-  gh.factory<_i8.RegisterFormBloc>(
-      () => _i8.RegisterFormBloc(get<_i6.IAuthFacade>()));
-  gh.factory<_i9.SignInFormBloc>(
-      () => _i9.SignInFormBloc(get<_i6.IAuthFacade>()));
+  gh.factory<_i8.SignInFormBloc>(
+      () => _i8.SignInFormBloc(get<_i6.IAuthFacade>()));
+  gh.factory<_i9.SignUpFormBloc>(
+      () => _i9.SignUpFormBloc(get<_i6.IAuthFacade>()));
   gh.factory<_i10.AuthBloc>(() => _i10.AuthBloc(get<_i6.IAuthFacade>()));
   return get;
 }

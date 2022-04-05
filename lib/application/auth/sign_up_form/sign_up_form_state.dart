@@ -1,8 +1,8 @@
-part of 'register_form_bloc.dart';
+part of 'sign_up_form_bloc.dart';
 
 @freezed
-class RegisterFormState with _$RegisterFormState {
-  const factory RegisterFormState({
+class SignUpFormState with _$SignUpFormState {
+  const factory SignUpFormState({
     required EmailAddress emailAddress,
     required Password password,
     required PasswordConfirm passwordConfirm,
@@ -11,7 +11,7 @@ class RegisterFormState with _$RegisterFormState {
     required Option<Either<AuthFailure, Unit>> authFailureOrSuccessOption,
   }) = _RegisterFormState;
 
-  factory RegisterFormState.initial() => RegisterFormState(
+  factory SignUpFormState.initial() => SignUpFormState(
         emailAddress: EmailAddress(''),
         password: Password(''),
         passwordConfirm: PasswordConfirm('', Password('')),

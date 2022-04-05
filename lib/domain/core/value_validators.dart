@@ -12,8 +12,6 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePassword(String input) {
-  // TODO: add regex to match backend behavior
-  // ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{8,}$
   if (input.length >= 6) {
     return right(input);
   } else {

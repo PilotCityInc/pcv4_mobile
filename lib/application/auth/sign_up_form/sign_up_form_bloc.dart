@@ -8,17 +8,17 @@ import 'package:pcv4_mobile/domain/auth/auth_failure.dart';
 import 'package:pcv4_mobile/domain/auth/i_auth_facade.dart';
 import 'package:pcv4_mobile/domain/auth/value_objects.dart';
 
-part 'register_form_event.dart';
-part 'register_form_state.dart';
+part 'sign_up_form_event.dart';
+part 'sign_up_form_state.dart';
 
-part 'register_form_bloc.freezed.dart';
+part 'sign_up_form_bloc.freezed.dart';
 
 @injectable
-class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
+class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   final IAuthFacade _authFacade;
 
-  RegisterFormBloc(this._authFacade) : super(RegisterFormState.initial()) {
-    on<RegisterFormEvent>((event, emit) async {
+  SignUpFormBloc(this._authFacade) : super(SignUpFormState.initial()) {
+    on<SignUpFormEvent>((event, emit) async {
       await event.when(
         emailChanged: (emailStr) async => emit(state.copyWith(
           emailAddress: EmailAddress(emailStr),
@@ -47,7 +47,7 @@ class RegisterFormBloc extends Bloc<RegisterFormEvent, RegisterFormState> {
   }
 
   Future<void> _registerWithEmailAndPassword(
-    Emitter<RegisterFormState> emit,
+    Emitter<SignUpFormState> emit,
   ) async {
     Either<AuthFailure, Unit>? failureOrSuccess;
 

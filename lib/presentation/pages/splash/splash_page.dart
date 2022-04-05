@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pcv4_mobile/application/auth/auth_bloc.dart';
@@ -19,7 +18,7 @@ class SplashPage extends StatelessWidget {
             debugPrint('I am authenticated!!');
           },
           unauthenticated: () =>
-              context.router.replace(const SignInPageRoute()),
+              context.router.replace(const SignUpPageRoute()),
         );
       },
       child: Scaffold(
@@ -27,7 +26,13 @@ class SplashPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/images/pilot_city.png'),
+            Center(
+              child: SizedBox(
+                width: 80,
+                height: 80,
+                child: Image.asset('assets/images/pilotcity.png'),
+              ),
+            ),
             const SizedBox(height: 16),
             const CircularProgressIndicator(),
           ],
