@@ -52,7 +52,19 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            LoginButton()
+            LoginButton(),
+            SizedBox(
+              height: 10,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'No account yet? Signup.',
+                  style: BodyText,
+                )
+              ],
+            )
           ],
         ),
       ),
