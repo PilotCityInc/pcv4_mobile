@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_unnecessary_containers
+// ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_unnecessary_containers, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import '../Widgets/Widgets.dart';
@@ -20,16 +20,62 @@ class LoginPage extends StatelessWidget {
         body: ListView(
           children: [
             SizedBox(
-              height: 100,
+              height: 130,
             ),
             Logo(),
+            SizedBox(
+              height: 35,
+            ),
             WelcomeBack(),
+            SizedBox(
+              height: 20,
+            ),
             EmailText(),
+            SizedBox(
+              height: 20,
+            ),
             PasswordText(),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 35),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot Password?',
+                      style: BodyText,
+                    )
+                  ],
+                )),
+            SizedBox(
+              height: 10,
+            ),
+            LoginButton()
           ],
         ),
       ),
     ]);
+  }
+
+  Padding LoginButton() {
+    return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 35),
+        child: Column(
+          children: [
+            Container(
+                height: 37,
+                width: double.infinity,
+                decoration: BoxDecoration(color: Colors.blue),
+                child: FlatButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Login',
+                      style: BodyText,
+                    ))),
+          ],
+        ));
   }
 
   Container PasswordText() {
@@ -54,6 +100,7 @@ class LoginPage extends StatelessWidget {
               labelStyle: TextStyle(color: Colors.white),
               isDense: true,
             ),
+            obscureText: true,
           ),
         ));
   }
