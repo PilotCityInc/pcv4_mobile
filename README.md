@@ -13,3 +13,6 @@ Flutter frontend for pcv4maxpro
 # Pallete.sart
     - PageHeading
         The login page heading for the welcome back can be used in similar places
+    
+    - BodyText
+        This is the fogot your password and Login button text
