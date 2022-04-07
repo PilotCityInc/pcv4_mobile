@@ -8,3 +8,8 @@ const TextStyle PageHeading = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.bold,
     color: Colors.blue);
+
+const TextStyle BodyText = TextStyle(
+  fontSize: 18,
+  color: Colors.white,
+);
