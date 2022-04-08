@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:pcv4_mobile/Login/LoginPage.dart';
+import 'package:pcv4_mobile/presentation/pages/auth/sign_in/sign_in_page.dart';
 import 'package:pcv4_mobile/presentation/pages/auth/sign_up/sign_up_page.dart';
 import 'package:pcv4_mobile/presentation/pages/splash/splash_page.dart';
 
