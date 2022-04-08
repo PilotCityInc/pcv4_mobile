@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../Widgets/Widgets.dart';
 import '../TextStyling/Pallete.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  const SignInPage({Key? key}) : super(key: key);
 
   // Base alignment for top most component so alignmnet change here will
   // unformily change throughtout the entire program

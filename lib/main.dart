@@ -1,25 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'Login/LoginPage.dart';
+import 'package:pcv4_mobile/injection.dart';
+import 'package:pcv4_mobile/presentation/app_widget.dart';
 
 void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter login page',
-      theme: ThemeData(
-          textTheme:
-              GoogleFonts.josefinSansTextTheme(Theme.of(context).textTheme),
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: LoginPage(),
-    );
-  }
+  configureDependencies(Env.dev);
+  runApp(AppWidget());
 }
