@@ -105,7 +105,7 @@ which changes the state as needed based on events it receives. See it in action 
 The presentation layer is made-up entirely of Flutter-specific code and widgets.
 The directory layout is as follows:
 
-- [pages](lib/presentation/app_widget.dart) - root Flutter widget, MaterialApp
+- [app_widget.dart](lib/presentation/app_widget.dart) - root Flutter widget, MaterialApp
 - [pages](lib/presentation/pages) - Flutter code for pages and UI components
 - [routes](lib/presentation/routes) - aggregate all the pages into URL-style paths
 
