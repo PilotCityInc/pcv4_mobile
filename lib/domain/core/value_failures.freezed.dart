@@ -12,39 +12,11 @@ part of 'value_failures.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ValueFailureTearOff {
-  const _$ValueFailureTearOff();
-
-  _InvalidEmail<T> invalidEmail<T>({required T failedValue}) {
-    return _InvalidEmail<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  _ShortPassword<T> shortPassword<T>({required T failedValue}) {
-    return _ShortPassword<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  _PasswordConfirmNotMatching<T> passwordConfirmNotMatching<T>(
-      {required T failedValue}) {
-    return _PasswordConfirmNotMatching<T>(
-      failedValue: failedValue,
-    );
-  }
-}
-
-/// @nodoc
-const $ValueFailure = _$ValueFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ValueFailure<T> {
   T get failedValue => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) invalidEmail,
@@ -129,31 +101,31 @@ class _$ValueFailureCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-abstract class _$InvalidEmailCopyWith<T, $Res>
+abstract class _$$_InvalidEmailCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
-  factory _$InvalidEmailCopyWith(
-          _InvalidEmail<T> value, $Res Function(_InvalidEmail<T>) then) =
-      __$InvalidEmailCopyWithImpl<T, $Res>;
+  factory _$$_InvalidEmailCopyWith(
+          _$_InvalidEmail<T> value, $Res Function(_$_InvalidEmail<T>) then) =
+      __$$_InvalidEmailCopyWithImpl<T, $Res>;
   @override
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class __$InvalidEmailCopyWithImpl<T, $Res>
+class __$$_InvalidEmailCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements _$InvalidEmailCopyWith<T, $Res> {
-  __$InvalidEmailCopyWithImpl(
-      _InvalidEmail<T> _value, $Res Function(_InvalidEmail<T>) _then)
-      : super(_value, (v) => _then(v as _InvalidEmail<T>));
+    implements _$$_InvalidEmailCopyWith<T, $Res> {
+  __$$_InvalidEmailCopyWithImpl(
+      _$_InvalidEmail<T> _value, $Res Function(_$_InvalidEmail<T>) _then)
+      : super(_value, (v) => _then(v as _$_InvalidEmail<T>));
 
   @override
-  _InvalidEmail<T> get _value => super._value as _InvalidEmail<T>;
+  _$_InvalidEmail<T> get _value => super._value as _$_InvalidEmail<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_InvalidEmail<T>(
+    return _then(_$_InvalidEmail<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -179,7 +151,7 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _InvalidEmail<T> &&
+            other is _$_InvalidEmail<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -190,8 +162,8 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$InvalidEmailCopyWith<T, _InvalidEmail<T>> get copyWith =>
-      __$InvalidEmailCopyWithImpl<T, _InvalidEmail<T>>(this, _$identity);
+  _$$_InvalidEmailCopyWith<T, _$_InvalidEmail<T>> get copyWith =>
+      __$$_InvalidEmailCopyWithImpl<T, _$_InvalidEmail<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -266,42 +238,43 @@ class _$_InvalidEmail<T> implements _InvalidEmail<T> {
 }
 
 abstract class _InvalidEmail<T> implements ValueFailure<T> {
-  const factory _InvalidEmail({required T failedValue}) = _$_InvalidEmail<T>;
+  const factory _InvalidEmail({required final T failedValue}) =
+      _$_InvalidEmail<T>;
 
   @override
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$InvalidEmailCopyWith<T, _InvalidEmail<T>> get copyWith =>
+  _$$_InvalidEmailCopyWith<T, _$_InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ShortPasswordCopyWith<T, $Res>
+abstract class _$$_ShortPasswordCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
-  factory _$ShortPasswordCopyWith(
-          _ShortPassword<T> value, $Res Function(_ShortPassword<T>) then) =
-      __$ShortPasswordCopyWithImpl<T, $Res>;
+  factory _$$_ShortPasswordCopyWith(
+          _$_ShortPassword<T> value, $Res Function(_$_ShortPassword<T>) then) =
+      __$$_ShortPasswordCopyWithImpl<T, $Res>;
   @override
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class __$ShortPasswordCopyWithImpl<T, $Res>
+class __$$_ShortPasswordCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements _$ShortPasswordCopyWith<T, $Res> {
-  __$ShortPasswordCopyWithImpl(
-      _ShortPassword<T> _value, $Res Function(_ShortPassword<T>) _then)
-      : super(_value, (v) => _then(v as _ShortPassword<T>));
+    implements _$$_ShortPasswordCopyWith<T, $Res> {
+  __$$_ShortPasswordCopyWithImpl(
+      _$_ShortPassword<T> _value, $Res Function(_$_ShortPassword<T>) _then)
+      : super(_value, (v) => _then(v as _$_ShortPassword<T>));
 
   @override
-  _ShortPassword<T> get _value => super._value as _ShortPassword<T>;
+  _$_ShortPassword<T> get _value => super._value as _$_ShortPassword<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_ShortPassword<T>(
+    return _then(_$_ShortPassword<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -327,7 +300,7 @@ class _$_ShortPassword<T> implements _ShortPassword<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ShortPassword<T> &&
+            other is _$_ShortPassword<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -338,8 +311,8 @@ class _$_ShortPassword<T> implements _ShortPassword<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$ShortPasswordCopyWith<T, _ShortPassword<T>> get copyWith =>
-      __$ShortPasswordCopyWithImpl<T, _ShortPassword<T>>(this, _$identity);
+  _$$_ShortPasswordCopyWith<T, _$_ShortPassword<T>> get copyWith =>
+      __$$_ShortPasswordCopyWithImpl<T, _$_ShortPassword<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -414,45 +387,46 @@ class _$_ShortPassword<T> implements _ShortPassword<T> {
 }
 
 abstract class _ShortPassword<T> implements ValueFailure<T> {
-  const factory _ShortPassword({required T failedValue}) = _$_ShortPassword<T>;
+  const factory _ShortPassword({required final T failedValue}) =
+      _$_ShortPassword<T>;
 
   @override
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ShortPasswordCopyWith<T, _ShortPassword<T>> get copyWith =>
+  _$$_ShortPasswordCopyWith<T, _$_ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PasswordConfirmNotMatchingCopyWith<T, $Res>
+abstract class _$$_PasswordConfirmNotMatchingCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
-  factory _$PasswordConfirmNotMatchingCopyWith(
-          _PasswordConfirmNotMatching<T> value,
-          $Res Function(_PasswordConfirmNotMatching<T>) then) =
-      __$PasswordConfirmNotMatchingCopyWithImpl<T, $Res>;
+  factory _$$_PasswordConfirmNotMatchingCopyWith(
+          _$_PasswordConfirmNotMatching<T> value,
+          $Res Function(_$_PasswordConfirmNotMatching<T>) then) =
+      __$$_PasswordConfirmNotMatchingCopyWithImpl<T, $Res>;
   @override
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class __$PasswordConfirmNotMatchingCopyWithImpl<T, $Res>
+class __$$_PasswordConfirmNotMatchingCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements _$PasswordConfirmNotMatchingCopyWith<T, $Res> {
-  __$PasswordConfirmNotMatchingCopyWithImpl(
-      _PasswordConfirmNotMatching<T> _value,
-      $Res Function(_PasswordConfirmNotMatching<T>) _then)
-      : super(_value, (v) => _then(v as _PasswordConfirmNotMatching<T>));
+    implements _$$_PasswordConfirmNotMatchingCopyWith<T, $Res> {
+  __$$_PasswordConfirmNotMatchingCopyWithImpl(
+      _$_PasswordConfirmNotMatching<T> _value,
+      $Res Function(_$_PasswordConfirmNotMatching<T>) _then)
+      : super(_value, (v) => _then(v as _$_PasswordConfirmNotMatching<T>));
 
   @override
-  _PasswordConfirmNotMatching<T> get _value =>
-      super._value as _PasswordConfirmNotMatching<T>;
+  _$_PasswordConfirmNotMatching<T> get _value =>
+      super._value as _$_PasswordConfirmNotMatching<T>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_PasswordConfirmNotMatching<T>(
+    return _then(_$_PasswordConfirmNotMatching<T>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -479,7 +453,7 @@ class _$_PasswordConfirmNotMatching<T>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PasswordConfirmNotMatching<T> &&
+            other is _$_PasswordConfirmNotMatching<T> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -490,9 +464,9 @@ class _$_PasswordConfirmNotMatching<T>
 
   @JsonKey(ignore: true)
   @override
-  _$PasswordConfirmNotMatchingCopyWith<T, _PasswordConfirmNotMatching<T>>
-      get copyWith => __$PasswordConfirmNotMatchingCopyWithImpl<T,
-          _PasswordConfirmNotMatching<T>>(this, _$identity);
+  _$$_PasswordConfirmNotMatchingCopyWith<T, _$_PasswordConfirmNotMatching<T>>
+      get copyWith => __$$_PasswordConfirmNotMatchingCopyWithImpl<T,
+          _$_PasswordConfirmNotMatching<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -567,13 +541,13 @@ class _$_PasswordConfirmNotMatching<T>
 }
 
 abstract class _PasswordConfirmNotMatching<T> implements ValueFailure<T> {
-  const factory _PasswordConfirmNotMatching({required T failedValue}) =
+  const factory _PasswordConfirmNotMatching({required final T failedValue}) =
       _$_PasswordConfirmNotMatching<T>;
 
   @override
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$PasswordConfirmNotMatchingCopyWith<T, _PasswordConfirmNotMatching<T>>
+  _$$_PasswordConfirmNotMatchingCopyWith<T, _$_PasswordConfirmNotMatching<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -27,7 +27,7 @@ class Auth0AuthService {
   Auth0AuthService(this._storage, this._httpClient);
 
   /// Get current user's access token. This is used to authorize API requests,
-  /// and should be treated as an opaque token.
+  /// and should be treated as an **opaque** token.
   ///
   /// However, in the case of Auth0, this is actually a JWT
   /// that can be decoded using [JwtDecoder.decode] to something like:

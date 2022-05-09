@@ -12,22 +12,7 @@ part of 'user.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$UserTearOff {
-  const _$UserTearOff();
-
-  _User call({required String id, required EmailAddress email}) {
-    return _User(
-      id: id,
-      email: email,
-    );
-  }
-}
-
-/// @nodoc
-const $User = _$UserTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$User {
@@ -72,28 +57,28 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-      __$UserCopyWithImpl<$Res>;
+abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
+      __$$_UserCopyWithImpl<$Res>;
   @override
   $Res call({String id, EmailAddress email});
 }
 
 /// @nodoc
-class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$UserCopyWith<$Res> {
-  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-      : super(_value, (v) => _then(v as _User));
+class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
+    implements _$$_UserCopyWith<$Res> {
+  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+      : super(_value, (v) => _then(v as _$_User));
 
   @override
-  _User get _value => super._value as _User;
+  _$_User get _value => super._value as _$_User;
 
   @override
   $Res call({
     Object? id = freezed,
     Object? email = freezed,
   }) {
-    return _then(_User(
+    return _then(_$_User(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -125,7 +110,7 @@ class _$_User implements _User {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _User &&
+            other is _$_User &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.email, email));
   }
@@ -138,19 +123,19 @@ class _$_User implements _User {
 
   @JsonKey(ignore: true)
   @override
-  _$UserCopyWith<_User> get copyWith =>
-      __$UserCopyWithImpl<_User>(this, _$identity);
+  _$$_UserCopyWith<_$_User> get copyWith =>
+      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
 }
 
 abstract class _User implements User {
-  const factory _User({required String id, required EmailAddress email}) =
-      _$_User;
+  const factory _User(
+      {required final String id, required final EmailAddress email}) = _$_User;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  EmailAddress get email;
+  EmailAddress get email => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
 }
