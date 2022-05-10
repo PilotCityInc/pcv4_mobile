@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pcv4_mobile/domain/auth/i_auth_facade.dart';
+import 'package:pcv4_mobile/domain/auth/user.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -19,7 +20,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           final userOption = await _authFacade.getSignedInUser();
           userOption.fold(
             () => emit(const AuthState.unauthenticated()),
-            (_) => emit(const AuthState.authenticated()),
+            (user) => emit(AuthState.authenticated(user)),
           );
         },
         signedOut: () async {

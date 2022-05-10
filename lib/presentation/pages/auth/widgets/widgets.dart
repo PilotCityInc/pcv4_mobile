@@ -1,4 +1,4 @@
-export 'background-screen.dart';
-export 'text-input.dart';
-export 'password-data.dart';
-export 'signup-button.dart';
+export 'background_screen.dart';
+export 'text_input.dart';
+export 'password_data.dart';
+export 'signup_button.dart';

@@ -12,7 +12,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const BackgroundImage(Imagesrc: 'assets/Login/Background.jpeg'),
+        const BackgroundImage(imageSrc: 'assets/images/pilotcity_bg-2.jpg'),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SafeArea(
