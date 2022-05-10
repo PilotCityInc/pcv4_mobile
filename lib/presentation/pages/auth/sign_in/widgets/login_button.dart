@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pcv4_mobile/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:pcv4_mobile/presentation/common/text_styling/pallete.dart';
+import 'package:pcv4_mobile/presentation/common/text_styling/palette.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({Key? key}) : super(key: key);

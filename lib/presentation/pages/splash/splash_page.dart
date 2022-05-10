@@ -17,7 +17,7 @@ class SplashPage extends StatelessWidget {
             // TODO: navigate to an actual page when authenticated
             debugPrint(
                 'I am ${user.email.getOrCrash()}, and I am authenticated!!');
-            // context.router.replace(const SignInPageRoute());
+            context.router.replace(const ProfilePageRoute());
           },
           unauthenticated: () =>
               context.router.replace(const SignUpPageRoute()),
