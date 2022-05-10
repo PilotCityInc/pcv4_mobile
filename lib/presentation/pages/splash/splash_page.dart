@@ -13,9 +13,10 @@ class SplashPage extends StatelessWidget {
       listener: (context, state) {
         state.when(
           initial: () {},
-          authenticated: () {
+          authenticated: (user) {
             // TODO: navigate to an actual page when authenticated
-            debugPrint('I am authenticated!!');
+            debugPrint(
+                'I am ${user.email.getOrCrash()}, and I am authenticated!!');
             // context.router.replace(const SignInPageRoute());
           },
           unauthenticated: () =>
