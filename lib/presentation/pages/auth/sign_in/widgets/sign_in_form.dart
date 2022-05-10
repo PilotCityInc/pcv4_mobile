@@ -1,23 +1,20 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pcv4_mobile/application/auth/auth_bloc.dart';
 import 'package:pcv4_mobile/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:pcv4_mobile/presentation/common/text_styling/pallete.dart';
+import 'package:pcv4_mobile/presentation/common/text_styling/palette.dart';
 import 'package:pcv4_mobile/presentation/pages/auth/sign_in/widgets/email_text.dart';
 import 'package:pcv4_mobile/presentation/pages/auth/widgets/auth_failure_snackbar.dart';
 import 'package:pcv4_mobile/presentation/routes/app_router.dart';
 
 import 'login_button.dart';
-import 'logo.dart';
+import '../../widgets/logo.dart';
 import 'password_text.dart';
 import 'welcome_back.dart';
 
 class SignInForm extends StatelessWidget {
   const SignInForm({Key? key}) : super(key: key);
-
-  // Base alignment for top most component so alignmnet change here will
-  // unformily change throughtout the entire program
-  final double baseAlignmentY = -0.5;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +25,12 @@ class SignInForm extends StatelessWidget {
             (authFailure) {
               createAuthFailureSnackbar(authFailure).show(context);
             },
-            (success) {},
+            (success) {
+              context.router.replace(const ProfilePageRoute());
+              context
+                  .read<AuthBloc>()
+                  .add(const AuthEvent.authCheckRequested());
+            },
           );
         });
       },

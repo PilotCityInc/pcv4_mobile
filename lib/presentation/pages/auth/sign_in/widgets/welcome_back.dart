@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pcv4_mobile/presentation/common/text_styling/pallete.dart';
+import 'package:pcv4_mobile/presentation/common/text_styling/palette.dart';
 
 class WelcomeBack extends StatelessWidget {
   const WelcomeBack({Key? key}) : super(key: key);
