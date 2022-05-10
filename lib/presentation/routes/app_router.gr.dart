@@ -28,6 +28,10 @@ class _$AppRouter extends RootStackRouter {
     SignInPageRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const SignInPage());
+    },
+    ProfilePageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const ProfilePage());
     }
   };
 
@@ -35,7 +39,8 @@ class _$AppRouter extends RootStackRouter {
   List<RouteConfig> get routes => [
         RouteConfig(SplashPageRoute.name, path: '/'),
         RouteConfig(SignUpPageRoute.name, path: '/auth/register'),
-        RouteConfig(SignInPageRoute.name, path: '/auth/login')
+        RouteConfig(SignInPageRoute.name, path: '/auth/login'),
+        RouteConfig(ProfilePageRoute.name, path: '/auth/profile')
       ];
 }
 
@@ -61,4 +66,13 @@ class SignInPageRoute extends PageRouteInfo<void> {
   const SignInPageRoute() : super(SignInPageRoute.name, path: '/auth/login');
 
   static const String name = 'SignInPageRoute';
+}
+
+/// generated route for
+/// [ProfilePage]
+class ProfilePageRoute extends PageRouteInfo<void> {
+  const ProfilePageRoute()
+      : super(ProfilePageRoute.name, path: '/auth/profile');
+
+  static const String name = 'ProfilePageRoute';
 }

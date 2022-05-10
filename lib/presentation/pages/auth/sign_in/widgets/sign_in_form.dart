@@ -85,7 +85,7 @@ class SignInForm extends StatelessWidget {
                         style: BodyText,
                       ),
                       onPressed: () =>
-                          context.router.replace(const SignUpPageRoute()),
+                          context.router.replace(const ProfilePageRoute()),
                     )
                   ],
                 )

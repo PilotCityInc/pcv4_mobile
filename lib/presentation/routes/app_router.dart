@@ -3,6 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:pcv4_mobile/presentation/pages/auth/sign_in/sign_in_page.dart';
 import 'package:pcv4_mobile/presentation/pages/auth/sign_up/sign_up_page.dart';
 import 'package:pcv4_mobile/presentation/pages/splash/splash_page.dart';
+import 'package:pcv4_mobile/presentation/pages/auth/profile/profile_page.dart';
 
 part 'app_router.gr.dart';
 
@@ -20,6 +21,10 @@ part 'app_router.gr.dart';
     AutoRoute(
       path: '/auth/login',
       page: SignInPage,
+    ),
+    AutoRoute(
+      path: '/auth/profile',
+      page: ProfilePage,
     ),
   ],
 )

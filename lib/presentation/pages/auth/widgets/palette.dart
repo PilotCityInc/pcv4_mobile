@@ -36,3 +36,11 @@ const TextStyle navButton = TextStyle(
   color: Colors.white,
   fontStyle: FontStyle.italic,
 );
+
+const TextStyle myProfile = TextStyle(
+  fontSize: 24,
+  fontFamily: 'Raleway',
+  color: Colors.white,
+  fontStyle: FontStyle.normal,
+  fontWeight: FontWeight.bold,
+);
