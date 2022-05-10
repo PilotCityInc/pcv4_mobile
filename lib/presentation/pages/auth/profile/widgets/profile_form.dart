@@ -1,9 +1,12 @@
 // ignore_for_file: non_constant_identifier_names, prefer_const_declarations
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pcv4_mobile/domain/auth/user.dart';
 import 'package:pcv4_mobile/presentation/common/TextStyling/Pallete.dart';
 import 'package:pcv4_mobile/presentation/routes/app_router.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:pcv4_mobile/application/auth/auth_bloc.dart';
 
 // Base alignment for top most component so alignmnet change here will
 // unformily change throughtout the entire program
@@ -14,36 +17,43 @@ class ProfileForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        const SizedBox(height: 100),
-        const Center(
-          child: Text(
-            'My Profile',
-            style: myProfile,
-          ),
-        ),
-        const SizedBox(height: 50),
-        Logo(),
-        const SizedBox(height: 20),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35),
-          child: Text(
-            'EMAIL',
-            style: emailHeading,
-          ),
-        ),
-        const SizedBox(height: 3),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 35),
-          child: Text(
-            'Pilotcity@gmail.com',
-            style: emailDisplay,
-          ),
-        ),
-        const SizedBox(height: 350),
-        LogoutButton(context),
-      ],
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        return ListView(
+          children: [
+            const SizedBox(height: 100),
+            const Center(
+              child: Text(
+                'My Profile',
+                style: myProfile,
+              ),
+            ),
+            const SizedBox(height: 50),
+            Logo(),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 35),
+              child: Text(
+                'EMAIL',
+                style: emailHeading,
+              ),
+            ),
+            const SizedBox(height: 3),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35),
+              child: Text(
+                state.maybeWhen(
+                  authenticated: (user) => user.email.getOrCrash(),
+                  orElse: () => 'none',
+                ),
+                style: emailDisplay,
+              ),
+            ),
+            const SizedBox(height: 350),
+            LogoutButton(context),
+          ],
+        );
+      },
     );
   }
 }
@@ -77,7 +87,10 @@ Padding LogoutButton(BuildContext context) {
               border: Border.all(color: const Color(0xFFC7C8CA), width: 3.0),
               borderRadius: const BorderRadius.all(Radius.circular(5.0))),
           child: MaterialButton(
-            onPressed: () => context.router.replace(const ProfilePageRoute()),
+            onPressed: () => {
+              context.read<AuthBloc>().add(const AuthEvent.signedOut()),
+              context.router.replace(const SignUpPageRoute())
+            },
             child: const Text(
               'Log Out',
               style: BodyText,
