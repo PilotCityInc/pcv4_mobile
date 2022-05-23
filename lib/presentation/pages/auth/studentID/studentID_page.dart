@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'widgets/studentID_form.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class StudentIDPage extends StatelessWidget {
+  const StudentIDPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
