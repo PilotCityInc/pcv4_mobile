@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/chnageName_form.dart';
+import 'widgets/changeName_form.dart';
 
 class ChangeNamePage extends StatelessWidget {
   const ChangeNamePage({Key? key}) : super(key: key);
