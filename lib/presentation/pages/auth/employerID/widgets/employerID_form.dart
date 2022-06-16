@@ -67,12 +67,15 @@ class EmployerIDForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               child: SizedBox(
-                child: TextButton(
+                child: OutlinedButton(
                   //save button
-                  style: TextButton.styleFrom(
-                    primary: Colors.grey,
-                    backgroundColor: Colors.grey[300],
+                  style: OutlinedButton.styleFrom(
+                    primary: Colors.black,
+                    backgroundColor: Colors.white,
                     textStyle: const TextStyle(fontFamily: 'Raleway'),
+                    side: const BorderSide(
+                      color: Colors.black,
+                    ),
                   ),
                   onPressed: () {},
                   child: const Text(
