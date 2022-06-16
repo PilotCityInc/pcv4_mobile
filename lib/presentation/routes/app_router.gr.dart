@@ -32,6 +32,10 @@ class _$AppRouter extends RootStackRouter {
     ProfilePageRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: const ProfilePage());
+    },
+    EmployerPageRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData, child: const EmployerIDPage());
     }
   };
 
@@ -40,7 +44,8 @@ class _$AppRouter extends RootStackRouter {
         RouteConfig(SplashPageRoute.name, path: '/'),
         RouteConfig(SignUpPageRoute.name, path: '/auth/register'),
         RouteConfig(SignInPageRoute.name, path: '/auth/login'),
-        RouteConfig(ProfilePageRoute.name, path: '/auth/profile')
+        RouteConfig(ProfilePageRoute.name, path: '/auth/profile'),
+        RouteConfig(EmployerPageRoute.name, path: '/auth/employer')
       ];
 }
 
@@ -75,4 +80,13 @@ class ProfilePageRoute extends PageRouteInfo<void> {
       : super(ProfilePageRoute.name, path: '/auth/profile');
 
   static const String name = 'ProfilePageRoute';
+}
+
+/// generated route for
+/// [EmployerPage]
+class EmployerPageRoute extends PageRouteInfo<void> {
+  const EmployerPageRoute()
+      : super(EmployerPageRoute.name, path: '/auth/employer');
+
+  static const String name = 'EmployerPageRoute';
 }
