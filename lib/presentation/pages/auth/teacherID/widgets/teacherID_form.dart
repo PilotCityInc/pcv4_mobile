@@ -3,8 +3,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pcv4_mobile/application/auth/auth_bloc.dart';
 import 'package:pcv4_mobile/presentation/common/text_styling/palette.dart';
 
-class TeacherIDForm extends StatelessWidget {
-  const TeacherIDForm({Key? key}) : super(key: key);
+class TeacherIDForm extends StatefulWidget {
+  @override
+  State<TeacherIDForm> createState() => _TeacherIDFormState();
+}
+
+class _TeacherIDFormState extends State<TeacherIDForm> {
+  // const TeacherIDForm({Key? key}) : super(key: key);
+  TextEditingController inputcontroller1 = new TextEditingController();
+  TextEditingController inputcontroller2 = new TextEditingController();
+
+  String? getvalue;
 
   @override
   Widget build(BuildContext context) {
@@ -35,36 +44,43 @@ class TeacherIDForm extends StatelessWidget {
               child: AutofillGroup(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
+                  children: [
                     //text fields for employer
                     InputField(
                       hintString: 'School District',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller2,
                     ),
                     InputField(
                       hintString: 'School Name',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller1,
                     ),
                     //multiline text fields
                     InputField(
                       hintString: 'List Subject areas you teach',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller1,
                     ),
                     InputField(
                       hintString: 'Search School Address',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller1,
                     ),
                     InputField(
                       hintString: 'City',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller1,
                     ),
                     InputField(
                       hintString: 'State',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller1,
                     ),
                     InputField(
                       hintString: 'Zipcode',
                       multipleLines: 1,
+                      inputcontroller: inputcontroller1,
                     ),
                   ],
                 ),
@@ -80,7 +96,11 @@ class TeacherIDForm extends StatelessWidget {
                     backgroundColor: Color(0xFF404142),
                     textStyle: const TextStyle(fontFamily: 'Raleway'),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      getvalue = inputcontroller1.text;
+                    });
+                  },
                   child: const Text(
                     'SAVE',
                     style: TextStyle(
@@ -94,6 +114,7 @@ class TeacherIDForm extends StatelessWidget {
                 height: 40,
               ),
             ),
+            Text(getvalue != Null ? '$getvalue' : ''),
             const SizedBox(
               height: 80,
             ),
@@ -106,14 +127,16 @@ class TeacherIDForm extends StatelessWidget {
 
 class InputField extends StatelessWidget {
   //for input fields
-  const InputField({
+  InputField({
     Key? key,
     required this.hintString, //user prompt
     required this.multipleLines, //number of lines for field
+    required this.inputcontroller,
   }) : super(key: key);
 
   final String hintString;
   final int multipleLines;
+  final TextEditingController? inputcontroller;
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +146,7 @@ class InputField extends StatelessWidget {
         style: const TextStyle(fontFamily: 'Raleway'), //set font
         maxLines: multipleLines, //set number of lines
         keyboardType: TextInputType.multiline,
+        controller: inputcontroller,
         decoration: InputDecoration(
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
